@@ -139,7 +139,7 @@
 						<li>La naissance de Pillman</li>
 						<li>Réflexion et architecture</li>
 						<li>Choix des technologies : un challenge</li>
-						<li>Les difficultés rencontrées : moteur d'apprentissage</li>
+						<li>Les difficultés rencontrées</li>
 						<li>Présentation de Pillman</li>
 						<li>Objectif pour l'avenir</li>
 					</ul>
@@ -147,10 +147,27 @@
 
 				<section>
 					<h2>Un objectif de départ clair</h2>
+					<p>=> Faire une application utile</p>
 				</section>
 
 				<section>
 					<p>Le monde infirmier et ses problématiques</p>
+					<br><br>
+
+					<ul>
+						<li>Correspondance nom du médicament / DCI</li>
+						<li>Informations (forme, effets secondaires)</li>
+						<li>Supports existants non-adaptés (Dictionnaire ou Internet)</li>
+					</ul>
+
+				</section>
+
+				<section>
+
+					<h3>Problématique</h3>
+					
+					<p>En tant qu'infirmière, comment puis-je facilement trouver la correspondance générique d'un médicament spécifique ainsi que ses informations secondaires, rapidement et sans Internet ?</p>
+
 				</section>
 
 				<section>
@@ -169,15 +186,20 @@
 
 				<section>
 
-					<h2>Pillman : 3 Applications en une</h2>
+					<h3>Pillman : 3 Applications</h3>
+					<br>
 
-					<li>Application mobile</li>
-					<li>API de processing des données Open Data</li>
-					<li>API renvoyant les données à l'application</li>
+					<ul>
+						<li>Application mobile</li>
+						<li>API de processing des données Open Data</li>
+						<li>API renvoyant les données à l'application</li>
+					</ul>
+					
 				</section>
 
 				<section>
-					<img src="img/schema_archi.png">
+					<h3>Architecture</h3>
+					<img src="img/schema.png" width="700">
 				</section>
 
 				<section data-transition="none">
@@ -208,15 +230,37 @@
 
 					<h3>Technologie de l'API en background</h3>
 
-					<img src="img/php.png">
+					<div style="display:flex; justify-content: space-around; align-items: center;">
+
+						<img src="img/php.png" width="300" class="no-border">
+
+						<ul>
+							<li>Bonne connaissance</li>
+							<li>Expérience</li>
+							<li>Stable et facilement débuggable</li>
+						</ul>
+					</div>
+
 				</section>
 
 				<section>
 
-					<h3>Technologie de l'API Pillman</h3>
+					<h3>Technologie de l'API Pillman : Le Go</h3>
 
 					<p>Opportunité : Le challenge d'un nouveau langage</p>
-					<img src="img/go.png">
+
+					<div style="display:flex; justify-content: space-around; align-items: center;">
+
+						<img src="img/golang.png" width="350" class="no-border">
+
+						<ul>
+							<li>Langage compilé</li>
+							<li>Fort typage</li>
+							<li>Bonne gestion de la charge</li>
+							<li>Bonne communauté</li>
+						</ul>
+					</div>
+
 				</section>
 
 				<section>
@@ -236,7 +280,7 @@
 
 				</section>
 
-				<section data-transition="none">
+				<section>
 
 					<h3>Présentation de Pillman 2</h3>
 
@@ -282,9 +326,6 @@
 			function launch() {
 			    var width, height, largeHeader, canvas, ctx, circles, target, animateHeader = true;
 
-			    var insidepic = false;
-				var weblib = false;
-
 				initHeader(document.getElementById('large-header'), document.getElementById('demo-canvas'));
 				initHeader(document.getElementById('large-header2'), document.getElementById('demo-canvas2'));
 
@@ -294,8 +335,6 @@
 					console.log('event.indexh', event.indexh);
 
 					animateFirstSlide = false;
-					insidepic = false;
-					weblib = false;
 
 					var lastSlide = document.querySelectorAll('.slides>section').length - 1;
 
@@ -305,16 +344,6 @@
 
 							case 0:
 								animateFirstSlide = true;
-							break;
-
-							case 7:
-								insidepic = true;
-								initHeader(document.getElementById('large-header'), document.getElementById('demo-canvas'));
-							break;
-
-							case 12:
-								weblib = true;
-								initHeader(document.getElementById('large-header2'), document.getElementById('demo-canvas2'));
 							break;
 
 							case lastSlide:
@@ -351,109 +380,6 @@
 
 					}, 50);
 				}
-
-			    // Main
-
-			    // 
-			    addListeners();
-
-			    function initHeader(largeHeader, canvas) {
-			        // width = window.innerWidth;
-			        width = 1000;
-			        height = 500;
-			        target = {
-			            x: 0,
-			            y: height
-			        };
-
-			        largeHeader.style.height = height + 'px';
-
-			        canvas.width = width;
-			        canvas.height = height;
-			        ctx = canvas.getContext('2d');
-
-			        // create particles
-			        circles = [];
-			        for (var x = 0; x < width * 0.5; x++) {
-			            var c = new Circle();
-			            circles.push(c);
-			        }
-			        animate();
-			    }
-
-			    // Event handling
-
-			    function addListeners() {
-			        //window.addEventListener('scroll', scrollCheck);
-			        window.addEventListener('resize', resize);
-			    }
-
-			    function scrollCheck() {
-			        if (document.body.scrollTop > height) animateHeader = false;
-			        else animateHeader = true;
-			    }
-
-			    function resize() {
-			        width = window.innerWidth;
-			        height = 130;
-			        largeHeader.style.height = height + 'px';
-			        canvas.width = width;
-			        canvas.height = height;
-			    }
-
-			    function animate() {
-
-			        if (animateHeader && (insidepic || weblib)) {
-			            ctx.clearRect(0, 0, width, height);
-			            for (var i in circles) {
-			                circles[i].draw();
-			            }
-			        }
-
-			        requestAnimationFrame(animate);
-			    }
-
-			    function randomFloatBetween(minValue,maxValue,precision){
-			        if(typeof(precision) == 'undefined'){
-			            precision = 2;
-			        }
-			        return parseFloat(Math.min(minValue + (Math.random() * (maxValue - minValue)),maxValue).toFixed(precision));
-			    }
-
-
-			    // Canvas manipulation
-
-			    function Circle() {
-			        var _this = this;
-
-			        // constructor
-			        (function() {
-			            _this.pos = {};
-			            init();
-			            //console.log(_this);
-			        })();
-
-			        function init() {
-			            _this.pos.x = Math.random() * width;
-			            _this.pos.y = height + Math.random() * 100;
-			            _this.alpha = 0.1 + Math.random() * 0.3;
-			            _this.scale = 0.1 + Math.random() * 0.3;
-			            // _this.velocity = Math.random();
-			            _this.velocity = randomFloatBetween(1,2);
-			        }
-
-			        this.draw = function() {
-			            if (_this.alpha <= 0) {
-			                init();
-			            }
-			            _this.pos.y -= _this.velocity;
-			            _this.alpha -= 0.0005;
-			            ctx.beginPath();
-			            ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
-			            ctx.fillStyle = 'rgba(255,255,255,' + _this.alpha + ')';
-			            ctx.fill();
-			        };
-			    }
 			}
 		</script>
 
