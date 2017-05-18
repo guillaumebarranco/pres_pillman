@@ -153,30 +153,40 @@
 					<p>=> Faire une application utile</p>
 				</section>
 
-				<section>
-					<p>Le monde infirmier et ses enjeux</p>
-					<br>
+				<section name="hospital world">
 
-					<ul style="font-size:28px;">
-						<li>Correspondance nom du médicament / DCI</li>
-						<li>Manque d'informations (forme, effets secondaires)</li>
-						<li>Supports existants peu adaptés (Dictionnaire ou Internet)</li>
-					</ul>
+					<section>
+						<p>Le monde infirmier</p>
 
-					<br><br>
+						<aside class="notes">Je me suis du coup intéressé au monde infirmier</aside>
+					</section>
 
-					<img src="https://media4.giphy.com/media/mPytjcsG3XS4o/giphy.gif" width="400" class="no-border">
+					<section>
+
+						<p>Les enjeux de l'hopital</p>
+						<br>
+
+						<ul style="font-size:28px;">
+							<li>Correspondance nom du médicament / DCI</li>
+							<li>Manque d'informations (forme, effets secondaires)</li>
+							<li>Supports existants peu adaptés (Dictionnaire ou Internet)</li>
+						</ul>
+
+						<br><br>
+
+						<img src="https://media4.giphy.com/media/mPytjcsG3XS4o/giphy.gif" width="400" class="no-border">
+					</section>
+
+					<section>
+
+						<h3>Problématique</h3>
+						<br>
+						
+						<p>En tant qu'infirmière, comment puis-je facilement trouver la correspondance générique d'un médicament spécifique ainsi que ses informations secondaires, rapidement et sans Internet ?</p>
+					</section>
 				</section>
 
-				<section>
-
-					<h3>Problématique</h3>
-					<br>
-					
-					<p>En tant qu'infirmière, comment puis-je facilement trouver la correspondance générique d'un médicament spécifique ainsi que ses informations secondaires, rapidement et sans Internet ?</p>
-				</section>
-
-				<section>
+				<section name="pillman presentation">
 
 					<section>
 
@@ -185,7 +195,7 @@
 						<ul>
 							<li>Accessibilité aux médicaments</li>
 							<li>Source sûre : Données du Gouvernement Français</li>
-							<li>Pas besoin d'Internet</li>
+							<li>Pas besoin d'Internet => stockage interne</li>
 							<li>Système de recherche avancé</li>
 							<li>Fonctionnalités et design épurés</li>
 							<li>Mise à jour facile et sécurisée</li>
@@ -210,21 +220,44 @@
 					</section>
 
 					<section>
-						<h3>A quoi ça sert ?</h3>
 
+						<h3>Choix de conception</h3>
+
+						<div style="display:flex; justify-content: space-around; align-items: center;">
+
+							<a href="img/screen1.png" data-lightbox="image-1">
+								<img src="img/screen1.png" width="320" alt="">
+							</a>
+
+							<a href="img/screen2.png" data-lightbox="image-1">
+								<img src="img/screen2.png" width="320" alt="">
+							</a>
+						</div>
+
+						<aside class="notes">
+							Bien parler de l'UX, de la démarche de conception en se mettant à la place des infirmières
+						</aside>
 
 					</section>
 
 					<section>
 
-						<h3>Choix de conceptions</h3>
-						
+						<h3>Choix de conception</h3>
+
 						<div style="display:flex; justify-content: space-around; align-items: center;">
-							<img src="img/screen1.png" width="320" alt="">
-							<img src="img/screen1.png" width="320" alt="">
+
+							<a href="img/screen3.png" data-lightbox="image-1">
+								<img src="img/screen3.png" width="320" alt="">
+							</a>
+
+							<a href="img/screen4.png" data-lightbox="image-1">
+								<img src="img/screen4.png" width="320" alt="">
+							</a>
 						</div>
 
-						<!--Montrer des screenshots-->
+						<aside class="notes">
+							Bien parler de l'UX, de la démarche de conception en se mettant à la place des infirmières
+						</aside>
 
 					</section>
 
@@ -247,34 +280,54 @@
 
 				<section>
 
-					<h3>Architecture</h3>
+					<h3>Architecture globale</h3>
 
 					<img src="img/schema.png" width="700">
 					<!-- commencer par l'application + potentiellement ajouter des animations pour la compréhension -->
 				</section>
 
-				<section data-transition="none">
+				<section name="mobile app">
+	
+					<section>
+						
+						<h3>Technologie de l'application mobile</h3>
 
-					<h2>Technologie de l'application mobile</h2>
+						<div style="display:flex; justify-content: space-around; align-items: center;">
+							<img src="img/ionic.png" width="200" class="no-border" alt="">
+							<img src="img/angular.png" width="200" class="no-border" alt="">
+						</div>
+					</section>
 
-					<ul>
-						<li class="fragment">React Native</li>
-						<li class="fragment">Native Script</li>
-						<li class="fragment">Ionic</li>
-						<li class="fragment">Ionic 2</li>
-					</ul>
-				</section>
+					<section>
+						<h3>Architecture de l'application</h3>
 
-				<section data-transition="none">
+						<p>Composants</p>
 
-					<h2>Technologie de l'application mobile</h2>
+						<ul style="font-size: 30px;">
+							<li>Menu</li>
+							<li>Maj</li>
+							<li>Home</li>
+								<li>---------- search filters</li>
+								<li>---------- search input</li>
+								<li>---------- after search choices</li>
+								<li>---------- element presentation card</li>
+							<li>Recent</li>
+							<li>Options</li>
+						</ul>
+					</section>
 
-					<ul>
-						<li style="text-decoration: line-through;">React Native</li>
-						<li style="text-decoration: line-through;">Native Script</li>
-						<li style="text-decoration: line-through;">Ionic</li>
-						<li>Ionic 2</li>
-					</ul>
+					<section>
+						<h3>Architecture de l'application</h3>
+
+						<p>Services</p>
+
+						<ul>
+							<li>Api calls</li>
+							<li>Database</li>
+							<li>Session</li>
+							<li>Util</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
@@ -283,7 +336,7 @@
 						<h3>Technologie de l'API en background</h3>
 
 						<div style="display:flex; justify-content: space-around; align-items: center;">
-							
+
 							<img src="img/php.png"  width="300" class="no-border">
 
 							<ul>
@@ -307,7 +360,7 @@
 				<section>
 
 					<section>
-						
+
 						<h3>Technologie de l'API Pillman : Le Go</h3>
 
 						<p>Opportunité : Le challenge d'un nouveau langage</p>
@@ -317,10 +370,10 @@
 							<img src="img/golang.png" width="350" class="no-border">
 
 							<ul>
-								<li>Langage compilé</li>
+								<li>Nécessité d'une bonne gestion de la charge</li>
+								<li>Langage compilé, rapide</li>
 								<li>Fort typage = sécurité</li>
-								<li>Bonne gestion de la charge</li>
-								<li>Bonne communauté</li>
+								<li>Bonne communauté (développé par Google)</li>
 							</ul>
 						</div>
 					</section>
@@ -333,15 +386,19 @@
 
 				<section>
 
-					<h3>Difficultés rencontrées / enjeux</h3>
-					<br><br>
+					<section>
+						
+						<h3>Difficultés rencontrées / enjeux</h3>
+						<br><br>
 
-					<ul>
-						<li>Langage compilé fortement typé : une première</li>
-						<li>Pas de droit à l'erreur sur les données</li>
-						<li>Les gestions des mises à jour</li>
-						<li>Dépendance à l'API Open Data</li>
-					</ul>
+						<ul>
+							<li>Pas de droit à l'erreur sur les données</li>
+							<li>Les gestions des mises à jour</li>
+							<li>Dépendance à l'API Open Data</li>
+							<li>Recherche des données (autocomplete ? Mémoire, BDD ?)</li>
+						</ul>
+					</section>
+
 				</section>
 
 				<section>
@@ -351,13 +408,16 @@
 				<section>
 
 					<h3>Objectif pour l'avenir</h3>
-
-					<p>Publication sur les stores</p>
-					<p>=> Être utile à un maximum de monde</p>
+					
+					<ol>
+						<li>Fournir l'application à des bêta-testeurs</li>
+						<li>Publication sur les stores</li>
+						<li>Être utile à un maximum de monde</li>
+					</ol>
 				</section>
 	
 				<section>
-					
+
 					<h2>Remerciements</h2>
 
 					<ul>
